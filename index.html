@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Wishes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .firework {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            animation: explode 1s ease-out forwards;
+        }
+        @keyframes explode {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(20); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-amber-50 min-h-screen font-['Poppins'] overflow-x-hidden">
+    <div id="content" class="hidden">
+        <!-- Decorative Elements -->
+        <div class="fixed -z-10 opacity-20">
+            <!-- Flower 1 -->
+            <svg class="floating w-32 h-32 absolute top-20 left-10" viewBox="0 0 100 100">
+                <path d="M50 15 
+                         C55 5, 70 5, 75 15 
+                         C85 20, 85 35, 75 40 
+                         C80 50, 80 65, 70 70 
+                         C65 80, 50 75, 50 65 
+                         C50 75, 35 80, 30 70 
+                         C20 65, 20 50, 25 40 
+                         C15 35, 15 20, 25 15 
+                         C30 5, 45 5, 50 15Z" 
+                      fill="#FCD34D"/>
+            </svg>
+
+            <!-- Butterfly -->
+            <svg class="floating w-16 h-16 absolute top-1/4 right-1/4" style="animation-delay: 2s;" viewBox="0 0 64 64">
+                <path d="M32 32 
+                         C20 10, 0 10, 10 30 
+                         C0 50, 20 50, 32 40 
+                         C44 50, 64 50, 54 30 
+                         C64 10, 44 10, 32 32Z" 
+                      fill="#FDE68A"/>
+                <circle cx="32" cy="32" r="2" fill="#92400E"/>
+            </svg>
+        </div>
+
+        <div class="container mx-auto px-4 py-12">
+            <h1 class="text-6xl font-['Dancing_Script'] text-amber-800 text-center mb-8">Happy Birthday! 🎉</h1>
+            
+            <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-xl p-8 text-center relative overflow-hidden">
+                <div class="floating text-8xl mb-8">🎂</div>
+                <p class="text-2xl text-amber-700 mb-8">Wishing you a day filled with joy and laughter!</p>
+                
+                <div class="grid grid-cols-4 gap-4 mb-8">
+                    <div class="floating text-4xl" style="animation-delay: 0.5s">🎈</div>
+                    <div class="floating text-4xl" style="animation-delay: 1s">✨</div>
+                    <div class="floating text-4xl" style="animation-delay: 1.5s">🎁</div>
+                    <div class="floating text-4xl" style="animation-delay: 2s">🌟</div>
+                </div>
+
+                <!-- Message Form -->
+                <div class="mt-12">
+                    <h2 class="text-2xl text-amber-800 mb-4">Leave a Birthday Wish</h2>
+                    <textarea 
+                        id="messageInput"
+                        class="w-full h-32 p-4 mb-4 rounded-lg border border-amber-200 focus:ring-2 focus:ring-amber-300 focus:border-amber-300 outline-none resize-none"
+                        placeholder="Write your birthday message here..."
+                    ></textarea>
+                    <button 
+                        onclick="sendMessage()"
+                        class="bg-amber-400 hover:bg-amber-500 text-white py-3 px-6 rounded-lg transition-colors duration-300"
+                    >
+                        Send Birthday Wish ✨
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="not-available" class="hidden container mx-auto px-4 py-12 text-center">
+        <h1 class="text-4xl text-amber-800 mb-4">Birthday Wishes Currently Closed</h1>
+        <p class="text-xl text-amber-600">This page is only available between June 18th and June 31st</p>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

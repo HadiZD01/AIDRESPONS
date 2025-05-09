@@ -9,7 +9,7 @@ function checkAvailability() {
     const content = document.getElementById('content');
     const notAvailable = document.getElementById('not-available');
     
-    if (!isJune && !isValidDay) {
+    if (isJune && !isValidDay) {
         content.classList.remove('hidden');
         notAvailable.classList.add('hidden');
         

@@ -10,8 +10,8 @@ function checkAvailability() {
     const notAvailable = document.getElementById('not-available');
     
     if (isJune && isValidDay) {
-        content.classList.add('hidden');
-        notAvailable.classList.remove('hidden');
+        content.classList.remove('hidden');
+        notAvailable.classList.add('hidden');
         
         // Create fireworks
         function createFirework() {

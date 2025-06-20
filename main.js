@@ -3,7 +3,7 @@ function checkAvailability() {
     const month = today.getMonth(); // 0-11, where 5 is June
     const day = today.getDate();
     
-    const isJune = month === 5;
+    const isJune = month === 6;
     const isValidDay = day >= 18 && day <= 31;                                                               
     
     const content = document.getElementById('content');
